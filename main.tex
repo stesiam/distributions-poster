@@ -1,0 +1,228 @@
+\documentclass{tikzposter}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usetheme{Simple}
+\usebackgroundstyle{Empty}
+\usecolorstyle{Britain}
+\useblockstyle{Default}
+\usetitlestyle{Envelope}
+
+
+
+\title{Common Distributions and its Characteristics}
+\author{Stylianos Siampourdanis}
+\institute{Department of Statistics and Insurance Science, University of Piraeus}
+
+
+\begin{document}
+	\maketitle
+
+\begin{columns}
+	\column{0.25}
+	
+	\block{Bernoulli}{
+		$$ X \sim Bernoulli(p), p \in \{0,1\}$$
+		
+		$$f(x) = \begin{cases} q , & \text{if x=0} \\ p , & \text{if x=1} \end{cases}$$ 
+
+		$$F(x) = \begin{cases} 0 , & \text{if x<0} \\ q , & \text{if 0<=x<1} \\ 1 , & \text{if x>=1} \end{cases}$$
+
+	    $$E(X) = p, V(X) = pq$$ 
+		
+		$$M_x(t) = pe^t + q, P_x(t) = pt + q$$
+	}
+	\block{Binomial}{
+		$$ X \sim B(n,p)$$
+		
+		$$n\in \mathbb{N}_0, p \in [0,1]$$
+		
+		$$f(x) = \binom{n}{x} \cdot p^x \cdot q^{n-x}, x \in [0, 1, \ldots n]$$ 
+		
+		$$E(X) = np, V(X) = npq$$ 
+		
+		$$M_x(t) = (pe^t + q)^n, P_x(t) = (pt + q)^n$$
+	}
+		\block{Poisson}{
+		$$X \sim Poisson(\lambda), \lambda >0$$
+		
+		$$f(x) = e^{-\lambda} \cdot \frac{\lambda^x}{x!}, x \in \mathbb{N}_{0}$$ 
+		
+		$$E(X) = \lambda, V(X) = \lambda$$ 
+		
+		$$M_x(t) = e^{\lambda (e^t-1)}, P_x(t) = e^{\lambda (t-1)}$$ }
+	\block{Geometric O}{
+		Counts number of \textbf{successes}
+		$$X \sim Ge_0(p), p \in (0,1)$$
+		
+		$$f(x) = q^xp, x \in \mathbb{N}_0$$ 
+		
+		$$F(x) = 1 - q^{x-1}$$
+		
+		$$E(X) = \frac{q}{p}, V(X) = \frac{q}{p^2}$$ 
+		
+		$$M_x(t) = \frac{p}{1-qe^t}, P_x(t) = \frac{p}{1-qt}$$ }
+		\block{Geometric 1}{
+		Counts number of trials \underline{until} first success
+		$$X \sim Ge_1(p), p \in {0,1}$$
+		
+		$$f(x) = q^{x-1}p, x\in \mathbb{N}$$ 
+		
+		$$F(x) = 1 - q^{x}$$
+		
+		$$E(X) = \frac{1}{p}, V(X) = \frac{q}{p^2}$$ 
+		
+		$$M_x(t) = \frac{pe^t}{1-qe^t}, P_x(t) = \frac{pt}{1-qt}$$ }
+	\column{0.25}
+		\block{Negative Binomial 0}{
+		$$X \sim NB_0(r, p), p \in {0,1}$$
+		
+		$$f(x) = \binom{x+r-1}{r-1}q^xp^r, x\in \mathbb{N}_0$$ 
+		
+		$$F(x) = 1 - q^{x-1}$$
+		
+		$$E(X) = \frac{rq}{p}, V(X) = \frac{rq}{p^2}$$
+	
+		$$M_x(t) = \left(\frac{p}{1-qe^t}\right)^r, P_x(t) = \left(\frac{p}{1-qt}\right)^r$$ }
+		\block{Negative Binomial 1}{
+		$$X \sim NB_1(r, p), p \in {0,1}$$
+		
+		$$f(x) = \binom{x+r-1}{r-1}q^{x-r}p^r, x\in \mathbb{N}$$ 
+		
+		$$F(x) = 1 - q^{x}$$
+		
+		$$E(X) = \frac{r}{p}, V(X) = \frac{rq}{p^2}$$
+	
+		$$M_x(t) = \left(\frac{pe^t}{1-qe^t}\right)^r, P_x(t) = \left(\frac{pt}{1-qt}\right)^r$$}
+		\block{Hypergeometric}{
+		$$X \sim h(n, a, b), $$
+		
+		$$f(x) = \frac{\binom{\alpha}{x}\binom{b}{n-x}}{\binom{a+b}{n}}, x\in \mathbb{N}_0$$ 
+	
+		
+		$$E(X) = \frac{a}{a+b}$$ 
+		
+		$$V(X) = \frac{abn(n-1)}{((a+b)^2)(a+b-1)}$$}
+		\block{Discrete Uniform}{
+		$$X \sim U(a, b), n = b - a +1$$
+		
+		$$f(x) = \frac{1}{n}, x\in [a, a+1, \ldots, b]$$ 
+		
+		$$F(x) = 1 - q^{x}$$
+		
+		$$E(X) = \frac{a + b}{2}, V(X) = \frac{n^2 - 1}{12}$$
+		
+		$$M_x(t) = \frac{e^{at} - e^{(b+1)t}}{n(1-e^t)}, P_x(t) = \frac{t^{a} - t^{b+1}}{n(1-t)}$$}
+		\block{Uniform}{
+		$$X \sim U(a, b), a,b \in \mathbb{R}$$
+	
+		
+		$$f(x) = \frac{1}{b-a}, x\in [a,b]$$ 
+		
+		$$F(x) = \frac{x-a}{b-a}, x \in [a,b]$$
+		
+		$$E(X) = \frac{a+b}{2}, V(X) = \frac{(b-a)^2}{12}$$
+	
+		$$M_x(t) = \frac{e^{tb} - e^{ta}}{t(b-a)}$$}
+	\column{0.25}
+		\block{Normal}{
+		$$X \sim N(\mu, \sigma^2)$$
+		
+		$$f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, , x\in \mathbb{R}$$ 
+		
+		$$E(X) = \mu, V(X) = \sigma^2$$
+		
+		$$M_x(t) = e^{\mu t + (\sigma^2 t^2)/2}$$}
+		\block{Standard Normal}{
+		$$X \sim N(0, 1)$$
+		
+		$$f(x) = \frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}, x\in \mathbb{R}$$ 
+		
+		$$F(x) = \Phi(x)$$
+		
+		$$E(X) = 0, V(X) = 1$$
+		
+		$$M_x(t) = e^{t^2/2}$$}
+		\block{Exponential}{
+		$$X \sim Exp(\lambda), \lambda>0$$
+		
+		$$\left(\text{alt.} X \sim Exp(\theta), \theta = \frac{1}{\lambda}, \theta >0\right)$$ 
+		
+		$$f(x) = \lambda e^{-\lambda x}, x \geq 0$$ 
+		
+		$$F(x) = 1 - e^{-\lambda x}$$
+		
+		$$E(X) = \frac{1}{\lambda}, V(X) = \frac{1}{\lambda^2}$$
+		
+		$$M_x(t) = \frac{\lambda}{\lambda -t}, t< \lambda$$}
+	\block{Gamma / Erlang (I \& II)}{
+		$$X \sim Gamma(\alpha, \lambda), \alpha,\lambda>0$$
+		$$\text{alt. (type II) } Gamma\left(\alpha, \theta = \frac{1}{\lambda}\right)$$
+	
+		$$f(x) = \frac{\lambda^\alpha x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)} , x \geq 0$$ 
+		
+		$$F(x) = \frac{\gamma(\alpha, \lambda x)}{\Gamma(\alpha)}$$
+		
+		$$E(X) = \frac{\alpha}{\lambda}, V(X) = \frac{\alpha}{\lambda^2}$$
+		
+		$$M_x(t) = \left(\frac{\lambda}{\lambda -t}\right)^\alpha, t< \lambda$$
+	\textbf{Note:} If $\alpha\in {1, 2, \ldots}\rightarrow X \sim Erlang$}
+	\block{Beta}{
+		$$X \sim Beta(\alpha, \beta), \alpha,\beta>0$$
+	
+		$$f(x) = \frac{x^{\alpha-1}(1-x)^{\beta-1}}{B(\alpha, \beta)} , x \in (0, 1)$$ 
+	
+		$$E(X) = \frac{\alpha}{\alpha + \beta}$$
+		
+		$$ V(X) = \frac{\alpha\beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}$$
+	\textbf{Note:} $B(\alpha, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)}$}
+	\column{0.25}
+		\block{Weibull}{
+		$$X \sim Wei(k, \lambda), k,\lambda>0$$
+		
+		$$f(x) = \frac{k}{\lambda} \left( \frac{x}{\lambda}\right)^{k-1} e^{-(x/\lambda)^k} , x \geq 0$$ 
+		
+		$$F(x) = 1 - e^{-(x/\lambda)^k}$$
+		
+		$$E(X) = \lambda \cdot \Gamma\left(1 + \frac{1}{k}\right)$$
+		
+		$$V(X) = \lambda^2\left[ \Gamma\left(1 + \frac{2}{k}\right) - \left[\Gamma\left(1 + \frac{1}{k}\right)\right]^2  \right]$$}
+		\block{Pareto I}{
+		$$X \sim Pa^{\text{I}}(\alpha, x_m),  \alpha, x_m >0$$
+		
+		$$f(x) = \frac{\alpha x_m^\alpha}{x^{a+1}} , x \in [x_m, \infty]$$ 
+		
+		$$F(x) = 1 - \left(\frac{x_m}{x}\right)^\alpha$$
+		
+		$$E(X) = \begin{cases} \infty , & \text{if \alpha < 1} \\ \frac{\alpha x_m}{a-1} , & \text{if \alpha \geq 1} \end{cases}$$
+		
+		$$V(X) = \frac{\alpha x_m^2}{(\alpha - 1)^2 (\alpha -2)}, \alpha \geq 2$$}
+		\block{Pareto II}{$$X \sim Pa^{\text{II}}(\alpha, x_m), \alpha,x_m>0$$
+			
+			$$f(x) = \frac{\alpha x_m^\alpha}{(x_m +x)^{a+1}} , x \geq 0$$ 
+			
+			$$F(x) = 1 - \left(\frac{x_m}{x + x_m}\right)^\alpha$$
+			
+			$$E(X) = \frac{\beta}{\alpha -1}, \alpha >1$$
+			
+			$$V(X) = \frac{\alpha x_m^2}{(\alpha - 1)^2 (\alpha -2)}, \alpha > 2$$}
+		\block{Log-normal}{$$X \sim Lognormal(\mu, \sigma^2), \mu \in \mathbb{R}, \sigma >0$$
+			
+			$$f(x) = \frac{1}{x\sigma\sqrt{2\pi}}exp\left(-\frac{(lnx - \mu)^2}{2\sigma^2}\right)$$ 
+			
+			$$F(x) = \Phi\left(\frac{lnx - \mu}{\sigma}\right)$$
+			
+			$$E(X) = e^{\mu + \sigma^2/2}$$
+			
+			$$V(X) = e^{\sigma^2 -1} \cdot e^{2\mu+\sigma^2}$$}
+		\block{Burr}{$$X \sim Burr(c, k), c,k >0$$
+			
+			$$f(x) = \frac{ckx^{c-1}}{(1+x^c)^{k+1}}$$ 
+			
+			$$F(x) = 1 - (1 + x^c)^{-k}$$
+			$$E(X) = \frac{\Gamma\left(1 - \frac{1}{c}\right) \cdot \Gamma\left(1 + \frac{1}{c}\right)}{\Gamma(k)}$$}
+\end{columns}
+
+
+\end{document}
