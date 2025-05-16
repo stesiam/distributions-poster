@@ -17,13 +17,10 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        IMAGE_NAME= stesiam/luaposter-libertinus
-        TAG=$(date +%Y%m%d%H%M%S)
-        docker build . -f Dockerfile -t $IMAGE_NAME:$TAG -t $IMAGE_NAME:latest
+        IMAGE_NAME=$(stesiam/luaposter-libertinus)
+        docker build . -f Dockerfile -t $IMAGE_NAME:latest
 
     - name: Push the Docker image
       run: |
-        IMAGE_NAME= stesiam/luaposter-libertinus
-        TAG=$(date +%Y%m%d%H%M%S)
-        docker push $IMAGE_NAME:$TAG
+        IMAGE_NAME=$(stesiam/luaposter-libertinus)
         docker push $IMAGE_NAME:latest
