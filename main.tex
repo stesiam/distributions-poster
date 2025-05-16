@@ -33,9 +33,9 @@
 	\block{Bernoulli}{
 		$$ X \sim Bernoulli(p), p \in \{0,1\}$$
 		
-		$$f(x) = \begin{cases} q , & \text{if x=0} \\ p , & \text{if x=1} \end{cases}$$ 
+		$$f(x) = \begin{cases} q , & \text{if } x=0 \\ p , & \text{if } x=1 \end{cases}$$ 
 
-		$$F(x) = \begin{cases} 0 , & \text{if x<0} \\ q , & \text{if 0<=x<1} \\ 1 , & \text{if x>=1} \end{cases}$$
+		$$F(x) = \begin{cases} 0 , & \text{if x<0} \\ q , & \text{if } 0<=x<1 \\ 1 , & \text{if } x>=1 \end{cases}$$
 
 	    $$E(X) = p, V(X) = pq$$ 
 		
@@ -86,7 +86,7 @@
 		\block{Negative Binomial 0}{
 		$$X \sim NB_0(r, p), p \in {0,1}$$
 		
-		$$f(x) = \binom{x+r-1}{r-1}q^xp^r, x\in \mathbb{N}_0$$ 
+		$$f(x) = \binom{x+r-1}{r-1}\cdot q^xp^r, x\in \mathbb{N}_0$$ 
 		
 		$$F(x) = 1 - q^{x-1}$$
 		
@@ -94,9 +94,9 @@
 	
 		$$M_x(t) = \left(\frac{p}{1-qe^t}\right)^r, P_x(t) = \left(\frac{p}{1-qt}\right)^r$$ }
 		\block{Negative Binomial 1}{
-		$$X \sim NB_1(r, p), p \in {0,1}$$
+		$$X \sim NB_{1}(r, p), p \in {0,1}$$
 		
-		$$f(x) = \binom{x+r-1}{r-1}q^{x-r}p^r, x\in \mathbb{N}$$ 
+		$$f(x) = \binom{x+r-1}{r-1}\cdot q^{x-r}p^r, x\in \mathbb{N}$$ 
 		
 		$$F(x) = 1 - q^{x}$$
 		
@@ -131,13 +131,12 @@
 		$$F(x) = \frac{x-a}{b-a}, x \in [a,b]$$
 		
 		$$E(X) = \frac{a+b}{2}, V(X) = \frac{(b-a)^2}{12}$$
-	
 		$$M_x(t) = \frac{e^{tb} - e^{ta}}{t(b-a)}$$}
 	\column{0.25}
 		\block{Normal}{
 		$$X \sim N(\mu, \sigma^2)$$
 		
-		$$f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, , x\in \mathbb{R}$$ 
+		$$f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} , x\in \mathbb{R}$$ 
 		
 		$$E(X) = \mu, V(X) = \sigma^2$$
 		
@@ -164,7 +163,7 @@
 		$$E(X) = \frac{1}{\lambda}, V(X) = \frac{1}{\lambda^2}$$
 		
 		$$M_x(t) = \frac{\lambda}{\lambda -t}, t< \lambda$$}
-	\block{Gamma / Erlang (I \& II)}{
+	\block{Gamma/Erlang (I \& II)}{
 		$$X \sim Gamma(\alpha, \lambda), \alpha,\lambda>0$$
 		$$\text{alt. (type II) } Gamma\left(\alpha, \theta = \frac{1}{\lambda}\right)$$
 	
@@ -184,7 +183,8 @@
 		$$E(X) = \frac{\alpha}{\alpha + \beta}$$
 		
 		$$ V(X) = \frac{\alpha\beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}$$
-	\textbf{Note:} $B(\alpha, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha + \beta)}$}
+		
+$$B(\alpha, \beta) =\frac{\Gamma(\alpha)\cdot \Gamma(\beta)}{\Gamma(\alpha + \beta)}$$}
 	\column{0.25}
 		\block{Weibull}{
 		$$X \sim Wei(k, \lambda), k,\lambda>0$$
@@ -203,7 +203,7 @@
 		
 		$$F(x) = 1 - \left(\frac{x_m}{x}\right)^\alpha$$
 		
-		$$E(X) = \begin{cases} \infty , & \text{if \alpha < 1} \\ \frac{\alpha x_m}{a-1} , & \text{if \alpha \geq 1} \end{cases}$$
+		$$E(X) = \begin{cases} \infty , & \text{if } \alpha < 1 \\ \frac{\alpha x_m}{a-1} , & \text{if } \alpha \geq 1 \end{cases}$$
 		
 		$$V(X) = \frac{\alpha x_m^2}{(\alpha - 1)^2 (\alpha -2)}, \alpha \geq 2$$}
 		\block{Pareto II}{$$X \sim Pa^{\text{II}}(\alpha, x_m), \alpha,x_m>0$$
