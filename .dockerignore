@@ -1,0 +1,24 @@
+# LaTeX build files
+*.aux
+*.log
+*.pdf
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+
+# Backup and editor files
+*~
+*.swp
+*.bak
+
+# Git and other VCS
+.git
+.gitignore
+.github
+
+# OS-specific
+.DS_Store
+Thumbs.db
