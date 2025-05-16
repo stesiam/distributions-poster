@@ -1,7 +1,6 @@
 # 🧮 Summary of Distributions - Poster Edition🧮
 
-[![Docker Image CI](https://github.com/stesiam/distributions-poster/actions/workflows/docker-image.yml/badge.svg)](https://github.com/stesiam/distributions-poster/actions/workflows/docker-image.yml)
-
+[![Docker Image CI](https://github.com/stesiam/distributions-poster/actions/workflows/docker-image.yml/badge.svg)](https://github.com/stesiam/distributions-poster/actions/workflows/docker-image.yml) 
 [![GH Actions linter](https://github.com/stesiam/distributions-poster/actions/workflows/actions-linter.yml/badge.svg)](https://github.com/stesiam/distributions-poster/actions/workflows/actions-linter.yml)
 
 A collection of distributions which is being categorized based on its type of distribution (continuous / discrete). Each of them is being described by certain characteristics such as:
