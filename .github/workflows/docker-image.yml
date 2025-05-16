@@ -16,11 +16,7 @@ jobs:
       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u stesiam --password-stdin
 
     - name: Build the Docker image
-      run: |
-        IMAGE_NAME=$(stesiam/luaposter-libertinus)
-        docker build . -f Dockerfile -t $IMAGE_NAME:latest
+      run: docker build . -f Dockerfile -t stesiam/luaposter-libertinus:latest
 
     - name: Push the Docker image
-      run: |
-        IMAGE_NAME=$(stesiam/luaposter-libertinus)
-        docker push $IMAGE_NAME:latest
+      run: docker push stesiam/luaposter-libertinus:latest
