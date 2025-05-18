@@ -1,0 +1,27 @@
+name: Build PDF and Upload to Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Pull Docker image
+        run: docker pull stesiam/luaposter-libertinus:latest
+
+      - name: Run container to build PDF
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/workspace \
+            stesiam/luaposter-libertinus:latest
+
+      - name: Upload PDF to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: main.pdf
